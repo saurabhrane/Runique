@@ -5,6 +5,7 @@ import android.os.Build
 import codes.saurabh.auth.data.di.authDataModule
 import codes.saurabh.auth.presentation.di.authViewModelModule
 import codes.saurabh.runique.di.appModule
+import codes.saurabh.core.data.di.coreDataModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin

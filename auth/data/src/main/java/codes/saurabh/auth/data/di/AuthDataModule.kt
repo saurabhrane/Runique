@@ -1,6 +1,7 @@
 package codes.saurabh.auth.data.di
 
 import codes.saurabh.auth.data.EmailPatternValidator
+import codes.saurabh.auth.domain.AuthRepository
 import codes.saurabh.auth.domain.PatternValidator
 import codes.saurabh.auth.domain.UserDataValidator
 import org.koin.core.module.dsl.singleOf
@@ -11,4 +12,5 @@ val authDataModule = module {
         EmailPatternValidator
     }
     singleOf(::UserDataValidator)
+    singleOf(::AuthRepositoryImpl).bind<AuthRepository>()
 }

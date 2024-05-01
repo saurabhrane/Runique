@@ -1,4 +1,4 @@
-package codes.saurabh.core.data.network
+package codes.saurabh.core.data.networking
 
 import codes.saurabh.core.data.BuildConfig
 import codes.saurabh.core.domain.util.DataError
