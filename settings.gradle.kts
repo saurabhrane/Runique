@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -19,7 +20,10 @@ dependencyResolutionManagement {
     }
 }
 
+gradle.startParameter.excludedTaskNames.addAll(listOf(":build-logic:convention:testClasses"))
+
 rootProject.name = "Runique"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include(":app")
 include(":auth:data")
 include(":auth:presentation")
