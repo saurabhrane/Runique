@@ -40,7 +40,6 @@ import codes.saurabh.core.presentation.designsystem.CrossIcon
 import codes.saurabh.core.presentation.designsystem.EmailIcon
 import codes.saurabh.core.presentation.designsystem.Poppins
 import codes.saurabh.core.presentation.designsystem.RuniqueDarkRed
-import codes.saurabh.core.presentation.designsystem.RuniqueGray
 import codes.saurabh.core.presentation.designsystem.RuniqueGreen
 import codes.saurabh.core.presentation.designsystem.RuniqueTheme
 import codes.saurabh.core.presentation.designsystem.components.GradientBackground
@@ -59,7 +58,7 @@ fun RegisterScreenRoot(
     val context = LocalContext.current
     val keyboardController = LocalSoftwareKeyboardController.current
     ObserveAsEvents(viewModel.events) { event ->
-        when(event) {
+        when (event) {
             is RegisterEvent.Error -> {
                 keyboardController?.hide()
                 Toast.makeText(
@@ -108,7 +107,7 @@ private fun RegisterScreen(
                 withStyle(
                     style = SpanStyle(
                         fontFamily = Poppins,
-                        color = RuniqueGray
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 ) {
                     append(stringResource(id = R.string.already_have_an_account) + " ")
@@ -224,7 +223,7 @@ fun PasswordRequirement(
                 CrossIcon
             },
             contentDescription = null,
-            tint = if(isValid) RuniqueGreen else RuniqueDarkRed
+            tint = if (isValid) RuniqueGreen else RuniqueDarkRed
         )
         Spacer(modifier = Modifier.width(16.dp))
         Text(
