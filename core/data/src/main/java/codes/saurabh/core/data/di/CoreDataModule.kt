@@ -7,4 +7,5 @@ val coreDataModule = module {
     single {
         HttpClientFactory().build()
     }
+    singleOf(::EncryptedSessionStorage).bind<SessionStorage>()
 }
