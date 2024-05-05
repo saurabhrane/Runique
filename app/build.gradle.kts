@@ -17,10 +17,8 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
-    }/*
-     todo add analytic_feature module
-    dynamicFeatures += setOf(":analytics:analytics_feature")
-    */
+    }
+    dynamicFeatures += setOf(":analytics:analytics-feature")
 }
 
 dependencies {
@@ -83,7 +81,6 @@ dependencies {
     implementation(projects.run.location)
     implementation(projects.run.network)
 
-    //todo: to be added
     //implementation(projects.core.connectivity.domain)
     //implementation(projects.core.connectivity.data)
 }
