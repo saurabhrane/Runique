@@ -2,6 +2,7 @@ package codes.saurabh.run.presentation.run_overview.mapper
 
 import codes.saurabh.core.domain.run.Run
 import codes.saurabh.core.presentation.ui.formatted
+import codes.saurabh.core.presentation.ui.toFormattedHeartRate
 import codes.saurabh.core.presentation.ui.toFormattedKm
 import codes.saurabh.core.presentation.ui.toFormattedKmh
 import codes.saurabh.core.presentation.ui.toFormattedMeters
@@ -28,6 +29,8 @@ fun Run.toRunUi(): RunUi {
         maxSpeed = maxSpeedKmh.toFormattedKmh(),
         pace = duration.toFormattedPace(distanceKm),
         totalElevation = totalElevationMeters.toFormattedMeters(),
-        mapPictureUrl = mapPictureUrl
+        mapPictureUrl = mapPictureUrl,
+        avgHeartRate = avgHeartRate.toFormattedHeartRate(),
+        maxHeartRate = maxHeartRate.toFormattedHeartRate()
     )
 }

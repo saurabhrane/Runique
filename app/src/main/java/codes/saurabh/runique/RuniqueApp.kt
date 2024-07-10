@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import codes.saurabh.auth.data.di.authDataModule
 import codes.saurabh.auth.presentation.di.authViewModelModule
+import codes.saurabh.core.connectivity.data.di.coreConnectivityDataModule
 import codes.saurabh.core.data.di.coreDataModule
 import codes.saurabh.core.database.di.databaseModule
 import codes.saurabh.run.data.di.runDataModule
@@ -20,7 +21,7 @@ import org.koin.androidx.workmanager.koin.workManagerFactory
 import org.koin.core.context.startKoin
 import timber.log.Timber
 
-class RuniqueApp : Application() {
+class RuniqueApp: Application() {
 
     val applicationScope = CoroutineScope(SupervisorJob())
 
@@ -44,6 +45,7 @@ class RuniqueApp : Application() {
                 databaseModule,
                 networkModule,
                 runDataModule,
+                coreConnectivityDataModule
             )
         }
     }

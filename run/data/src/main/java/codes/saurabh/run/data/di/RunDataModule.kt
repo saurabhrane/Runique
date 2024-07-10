@@ -16,4 +16,5 @@ val runDataModule = module {
     workerOf(::DeleteRunWorker)
 
     singleOf(::SyncRunWorkerScheduler).bind<SyncRunScheduler>()
+    singleOf(::PhoneToWatchConnector).bind<WatchConnector>()
 }
